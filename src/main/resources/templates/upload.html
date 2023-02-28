@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Upload Your File</title>
+
+    </head>
+    <body>
+        <form method="POST" enctype="multipart/form-data" action="/upload">
+            <p th:if="${flag}">success</p>
+            <p th:if="!${flag}" th:text="${msg}"></p>
+            <p>
+                Choose Your File：<input type="file" name="file">
+            </p>
+
+            <p>
+                Destination: <input type="text" name="dest">
+            </p>
+
+            <p>
+                <input type="submit" value="upload">
+            </p>
+        </form>
+    </body>
+</html>
